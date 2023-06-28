@@ -1,6 +1,6 @@
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
-const token = "INSERT-TOKEN-HERE";
+const token = "OTAyNDAzMzU2Njk2Mzg3NjE1.GE6nMO.9d4zazchU6oEOdv7lyV-oI4X5ulkRTu5kak4O0";
 
 const incrementLeaderboard = (leaderboard, user) => {
     let userElem = null;
