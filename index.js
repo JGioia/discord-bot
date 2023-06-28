@@ -1,5 +1,6 @@
 const { Client, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES] });
+const token = "INSERT-TOKEN-HERE";
 
 const incrementLeaderboard = (leaderboard, user) => {
     let userElem = null;
@@ -129,4 +130,4 @@ client.on('messageCreate', message => {
     }
 });
 
-client.login('OTAyNDAzMzU2Njk2Mzg3NjE1.YXd6ng.AkpKRS3TJ5H7Izj-y0dE_Zwr9As');
+client.login(token);
