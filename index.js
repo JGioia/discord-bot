@@ -22,7 +22,7 @@ const incrementLeaderboard = (leaderboard, user) => {
 
 const printLeaderboard = (leaderboard, title, channel) => {
     channel.send("**" + title + "**");
-    leaderboard.sort((a, b) => a.count - b.count).forEach((elem) => {
+    leaderboard.sort((a, b) => b.count - a.count).forEach((elem) => {
         channel.send(elem.user + ": " + elem.count);
     });
 };
@@ -80,7 +80,9 @@ const hotwords = [
         // printLeaderboard(hotword.leaderboard, "amogus leaderboard", message.channel);
     }, leaderboard: []}, 
     {word: "sus", action: (message, hotword) => {
-        printHotwordQuote(message, hotword.word);
+        if (Math.random() > 0.75) {
+            printHotwordQuote(message, hotword.word);
+        }
         incrementLeaderboard(hotword.leaderboard, message.author.username);
         incrementSusmeter();
         // printLeaderboard(hotword.leaderboard, "sussy leaderboard", message.channel);
